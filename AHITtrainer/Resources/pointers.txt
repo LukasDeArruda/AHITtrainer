@@ -1,0 +1,11 @@
+xPos float base+01252E70,0,144,718,80
+yPos float base+01252E70,0,144,718,84
+zPos float base+01252E70,0,144,718,88
+xSpd float base+01252E70,0,144,718,1B4
+ySpd float base+01252E70,0,144,718,1B8
+zSpd float base+01252E70,0,144,718,1BC
+health int base+01252E70,0,144,718,458
+money int base+01277028,68,F8
+paused int base+1252F30
+inAir int base+01252E70,0,144,718,6BC,0,164
+loading int base+10FE250
