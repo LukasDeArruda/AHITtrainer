@@ -1,0 +1,15 @@
+C:\Users\legen\source\repos\AHITtrainer\AHITtrainer\bin\x64\Debug\AHITtrainer.exe.config
+C:\Users\legen\source\repos\AHITtrainer\AHITtrainer\bin\x64\Debug\AHITtrainer.exe
+C:\Users\legen\source\repos\AHITtrainer\AHITtrainer\bin\x64\Debug\AHITtrainer.pdb
+C:\Users\legen\source\repos\AHITtrainer\AHITtrainer\bin\x64\Debug\Memory.dll
+C:\Users\legen\source\repos\AHITtrainer\AHITtrainer\bin\x64\Debug\System.Security.Principal.Windows.dll
+C:\Users\legen\source\repos\AHITtrainer\AHITtrainer\bin\x64\Debug\Memory.xml
+C:\Users\legen\source\repos\AHITtrainer\AHITtrainer\bin\x64\Debug\System.Security.Principal.Windows.xml
+C:\Users\legen\source\repos\AHITtrainer\AHITtrainer\obj\x64\Debug\AHITtrainer.csproj.AssemblyReference.cache
+C:\Users\legen\source\repos\AHITtrainer\AHITtrainer\obj\x64\Debug\AHITtrainer.Form1.resources
+C:\Users\legen\source\repos\AHITtrainer\AHITtrainer\obj\x64\Debug\AHITtrainer.Properties.Resources.resources
+C:\Users\legen\source\repos\AHITtrainer\AHITtrainer\obj\x64\Debug\AHITtrainer.csproj.GenerateResource.cache
+C:\Users\legen\source\repos\AHITtrainer\AHITtrainer\obj\x64\Debug\AHITtrainer.csproj.CoreCompileInputs.cache
+C:\Users\legen\source\repos\AHITtrainer\AHITtrainer\obj\x64\Debug\AHITtrainer.csproj.CopyComplete
+C:\Users\legen\source\repos\AHITtrainer\AHITtrainer\obj\x64\Debug\AHITtrainer.exe
+C:\Users\legen\source\repos\AHITtrainer\AHITtrainer\obj\x64\Debug\AHITtrainer.pdb

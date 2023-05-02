@@ -47,26 +47,30 @@ namespace AHITtrainer
         {
             bool gameOpen = memory.OpenProcess("HatinTimeGame");
 
-            GameStatus(gameOpen, isPaused);
-            ticks++;
-            Label label = (Label)Controls.Find("TickLabel", true)[0];
-            label.Text = ticks.ToString();
-
-            int isLoading = memory.ReadInt(lines[10]);
-            if(isLoading == 1)
+            if (gameOpen)
             {
-                lockControls();
-            }
-            else
-            {
-                unlockControls();
-            }
+                int isLoading = memory.ReadInt(lines[10]);
+                GameStatus(gameOpen, isPaused);
+                ticks++;
+                Label label = (Label)Controls.Find("TickLabel", true)[0];
+                label.Text = ticks.ToString();
 
-            UpdatePos();
-            UpdateSpeed();
-            UpdateMoney();
-            UpdateHealth();
-            CheckGrounded();
+
+                if (isLoading == 1)
+                {
+                    lockControls();
+                }
+                else
+                {
+                    unlockControls();
+                }
+
+                UpdatePos();
+                UpdateSpeed();
+                UpdateMoney();
+                UpdateHealth();
+                CheckGrounded();
+            }
 
         }
 
@@ -100,7 +104,12 @@ namespace AHITtrainer
         private void GameStatus(bool isOpen, int isPaused)
         {
             isPaused = memory.ReadInt(lines[8]);
-            if (isOpen && isPaused == 0)
+            int isLoading = memory.ReadInt(lines[10]);
+            if(isLoading == 1)
+            {
+                gameRunLabel.Text = "Game Is Loading";
+            }
+            else if (isOpen && isPaused == 0)
             {
                 gameRunLabel.Text = "Game Is Running";
             }
@@ -116,22 +125,36 @@ namespace AHITtrainer
 
         private void UpdatePos()
         {
-            xPos = memory.ReadFloat(lines[0]);
-            yPos = memory.ReadFloat(lines[1]);
-            zPos = memory.ReadFloat(lines[2]);
-            xPosVal.Text = xPos.ToString();
-            yPosVal.Text = yPos.ToString();
-            zPosVal.Text = zPos.ToString();
+            try
+            {
+                xPos = memory.ReadFloat(lines[0]);
+                yPos = memory.ReadFloat(lines[1]);
+                zPos = memory.ReadFloat(lines[2]);
+                xPosVal.Text = xPos.ToString();
+                yPosVal.Text = yPos.ToString();
+                zPosVal.Text = zPos.ToString();
+            }
+            catch (System.OverflowException)
+            {
+                xPos = 0;
+            }
         }
 
         private void UpdateSpeed()
         {
-            xSpd = memory.ReadFloat(lines[3]);
-            ySpd = memory.ReadFloat(lines[4]);
-            zSpd = memory.ReadFloat(lines[5]);
-            xSpdVal.Text = xSpd.ToString();
-            ySpdVal.Text = ySpd.ToString();
-            zSpdVal.Text = zSpd.ToString();
+            try
+            {
+                xSpd = memory.ReadFloat(lines[3]);
+                ySpd = memory.ReadFloat(lines[4]);
+                zSpd = memory.ReadFloat(lines[5]);
+                xSpdVal.Text = xSpd.ToString();
+                ySpdVal.Text = ySpd.ToString();
+                zSpdVal.Text = zSpd.ToString();
+            }
+            catch (System.OverflowException)
+            {
+                xSpd = 0;
+            }
         }
 
 
@@ -324,7 +347,15 @@ namespace AHITtrainer
 
         private void CheckGrounded()
         {
-            int isGrounded = memory.ReadInt(lines[9]);
+            int isGrounded;
+            try
+            {
+                isGrounded = memory.ReadInt(lines[9]);
+            }
+            catch(System.OverflowException)
+            {
+                isGrounded = 0;
+            }
             if (isGrounded == 1)
             {
                 inAirLabel.Text = "In air";
